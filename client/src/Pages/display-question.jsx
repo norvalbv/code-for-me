@@ -10,6 +10,7 @@ const DisplayQuestion = () => {
 
   const fetchData = async () => {
     try {
+      console.log(currentLocation);
       const response = await fetch(
         `http://localhost:5000/get-question/${currentLocation}`
       );

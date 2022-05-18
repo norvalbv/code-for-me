@@ -12,6 +12,7 @@ const getQuestions = async (req, res, next) => {
 const getQuestion = async (req, res, next) => {
   const { id } = req.params;
   try {
+    console.log(id);
     const response = await pool.query(
       `SELECT * FROM questions WHERE id = ${id};`
     );

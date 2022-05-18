@@ -56,16 +56,21 @@ app.use((req, res, next) => {
 });
 
 // user routes
+//login
 app.post("/login", checkAuthenticated, users.loginUser);
 app.post("/signup", users.createUser);
 app.get("/logout", checkAuthenticated, users.logoutUser);
 app.get("/user", users.getUser);
+
+// db related users (not necessarily logged in)
+
 app.get("/all-users", users.getAllUsers);
+app.get("/user/:username", users.getUserById);
 
 // questions routes
 
 app.get("/get-questions", question.getQuestions);
-app.get("/get-question/:id", question.getQuestions);
+app.get("/get-question/:id", question.getQuestion);
 
 // login middleware check.
 

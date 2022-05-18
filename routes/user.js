@@ -113,10 +113,23 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getUserById = async (req, res) => {
+  const { username } = req.params;
+  try {
+    const data = await pool.query(
+      `SELECT * FROM users WHERE username = '${username}'`
+    );
+    res.send(data.rows);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 module.exports = {
   loginUser,
   createUser,
   logoutUser,
   getUser,
   getAllUsers,
+  getUserById,
 };
