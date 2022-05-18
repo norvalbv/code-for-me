@@ -12,6 +12,8 @@ const cookieParser = require("cookie-parser");
 // routes fetching
 
 const users = require("./routes/user");
+const misc = require("./routes/misc");
+const question = require("./routes/question");
 
 const PORT = process.env.PORT || 5000;
 
@@ -59,6 +61,11 @@ app.post("/signup", users.createUser);
 app.get("/logout", checkAuthenticated, users.logoutUser);
 app.get("/user", users.getUser);
 app.get("/all-users", users.getAllUsers);
+
+// questions routes
+
+app.get("/get-questions", question.getQuestions);
+app.get("/get-question/:id", question.getQuestions);
 
 // login middleware check.
 

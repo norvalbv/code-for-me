@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateQuestion from "../Pages/create-question";
+import DisplayQuestion from "../Pages/display-question";
 import Landing from "../Pages/landing";
 import SignIn from "../Pages/user/login";
 import MyProfile from "../Pages/user/my-profile";
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="/profile/:username" element={<Profile />}></Route>
         <Route path="/my-profile" element={<MyProfile />}></Route>
         <Route path="/create-question" element={<CreateQuestion />}></Route>
+        <Route path="/question/:id" element={<DisplayQuestion />}></Route>
       </Routes>
     </Router>
   );
