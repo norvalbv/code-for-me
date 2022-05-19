@@ -24,6 +24,11 @@ const UserDisplay = () => {
   //   navigate(`/profile/${user}`);
   // };
 
+  const [showComponent, setShowComponent] = useState({
+    show: false,
+    user: null,
+  });
+  console.log(showComponent);
   if (users.length === 0) return <Loading />;
 
   return (
@@ -40,13 +45,22 @@ const UserDisplay = () => {
             <div>
               <p
                 className="m-0 font-bold underline cursor-pointer"
-                onClick={() => <Profile user={username} />}
+                onClick={() => {
+                  if (showComponent.user === null) {
+                    setShowComponent({ show: true, user: username });
+                  } else {
+                    setShowComponent({ show: false, user: null });
+                  }
+                }}
               >
                 {username}
               </p>
               {title && <p className="m-0">{title}</p>}
             </div>
           </div>
+          {showComponent.user === username && (
+            <Profile username={username} setShowComponent={setShowComponent} />
+          )}
         </div>
       ))}
     </>

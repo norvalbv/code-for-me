@@ -8,6 +8,7 @@ import SignIn from "../Pages/user/login";
 import MyProfile from "../Pages/user/my-profile";
 import Profile from "../Components/user-display/profile";
 import SignUp from "../Pages/user/signup";
+import FullProfile from "../Pages/user/full-profile";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
         <Route path="/my-profile" element={<MyProfile />}></Route>
         <Route path="/create-question" element={<CreateQuestion />}></Route>
         <Route path="/question/:id" element={<DisplayQuestion />}></Route>
+        <Route path="/user/:id" element={<FullProfile />}></Route>
         <Route path="/message-user/:id" element={<MessageUser />}></Route>
         <Route path="/find-talent" element={<FindTalent />}></Route>
       </Routes>
