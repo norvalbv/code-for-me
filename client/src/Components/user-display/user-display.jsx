@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Loading from "./loading";
+import Profile from "./profile";
+import Loading from "../loading";
 
 const UserDisplay = () => {
   const [users, setUsers] = useState([]);
@@ -18,10 +19,10 @@ const UserDisplay = () => {
     fetchData();
   }, []);
 
-  const navigate = useNavigate();
-  const handleClick = (user) => {
-    navigate(`/profile/${user}`);
-  };
+  // const navigate = useNavigate();
+  // const handleClick = (user) => {
+  //   navigate(`/profile/${user}`);
+  // };
 
   if (users.length === 0) return <Loading />;
 
@@ -39,7 +40,7 @@ const UserDisplay = () => {
             <div>
               <p
                 className="m-0 font-bold underline cursor-pointer"
-                onClick={() => handleClick(username)}
+                onClick={() => <Profile user={username} />}
               >
                 {username}
               </p>

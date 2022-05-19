@@ -6,7 +6,7 @@ import Landing from "../Pages/landing";
 import MessageUser from "../Pages/message-user";
 import SignIn from "../Pages/user/login";
 import MyProfile from "../Pages/user/my-profile";
-import Profile from "../Pages/user/profile";
+import Profile from "../Components/user-display/profile";
 import SignUp from "../Pages/user/signup";
 
 const AppRouter = () => {
